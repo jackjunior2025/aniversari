@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Dos Lunas Juntos, Un Solo Corazón</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #ffe6e6, #fff);
+      color: #333;
+      padding: 30px;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background-color: #ffffffcc;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      animation: aparecer 2s ease-in-out;
+    }
+    h1 {
+      text-align: center;
+      color: #c0392b;
+    }
+    .frase {
+      font-style: italic;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #8e44ad;
+    }
+    .carta {
+      text-align: justify;
+      margin-top: 20px;
+    }
+    .firma {
+      text-align: right;
+      margin-top: 40px;
+      font-weight: bold;
+    }
+    .final {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 18px;
+      color: #d35400;
+      font-weight: bold;
+    }
+    .countdown {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 16px;
+      color: #7f8c8d;
+    }
+    .galeria {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .galeria img {
+      width: 220px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    .galeria img:hover {
+      transform: scale(1.05);
+    }
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Música de fondo -->
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+    Tu navegador no soporta música de fondo.
+  </audio>
+
+  <div class="container">
+    <h1>Dos Lunas Juntos, Un Solo Corazón</h1>
+    <div class="frase">"Amarte no fue una opción, fue mi destino."</div>
+
+    <div class="galeria">
+      <img src="foto1.jpg" alt="Foto de Yuliana 1">
+      <img src="foto2.jpg" alt="Foto de Yuliana 2">
+      <img src="foto3.jpg" alt="Disfraz con corazón">
+    </div>
+
+    <div class="carta">
+      <p>Mi amada Yuliana,<br><br>
+
+      Hoy cumplimos dos meses de esta hermosa aventura llamada amor. Parece poco, pero en tan poco tiempo has llenado mi vida de alegría, ternura y sentido. Cada día contigo es un regalo que valoro más de lo que las palabras pueden expresar.<br><br>
+
+      Gracias por tu risa, por tus mensajes, por tu paciencia, por tu dulzura... por ser tú. Quiero seguir construyendo contigo recuerdos, sonrisas y sueños. Eres mi inspiración, mi paz, mi canción favorita.<br><br>
+
+      Que este día especial sea solo uno de muchos que vendrán. Te amo profundamente y siempre lo haré.</p>
+
+      <div class="firma">Jack 💌</div>
+    </div>
+
+    <div class="final">
+      Feliz Aniversario, mi amor. Que vengan mil lunas más contigo.
+    </div>
+
+    <div class="countdown" id="countdown">
+      Próximo mes juntos en: ...
+    </div>
+  </div>
+
+  <!-- Cuenta regresiva -->
+  <script>
+    const countdownElement = document.getElementById("countdown");
+    const nextAnniversary = new Date("2025-07-24T00:00:00");
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = nextAnniversary - now;
+
+      if (diff <= 0) {
+        countdownElement.innerText = "¡Ya es nuestro próximo mes juntos!";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      countdownElement.innerText = `Próximo mes juntos en: ${days} días, ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
